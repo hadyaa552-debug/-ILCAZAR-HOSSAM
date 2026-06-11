@@ -26,8 +26,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap"
           rel="stylesheet"
         />
-        {/* ── Google Tag Manager — أضف كودك هنا ── */}
-        {/* <script dangerouslySetInnerHTML={{__html:`(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXXX')`}} /> */}
+        {/* ── Google Ads Tag ── */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17039137293" />
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-17039137293');
+        `}} />
       </head>
       <body>{children}</body>
     </html>

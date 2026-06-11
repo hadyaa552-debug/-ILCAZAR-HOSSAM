@@ -9,20 +9,16 @@ const LOGO = "https://arro-consultancy.com/uploads/2026-06-08-143835-6a26a9bb6e8
 export default function ThankYou() {
   useEffect(() => {
     // ══════════════════════════════════════
-    // TRACKING — أضف كود الـ Conversion هنا
+    // Google Ads — Form Conversion Tracking
     // ══════════════════════════════════════
-    // مثال Google Ads Conversion:
-    // if (typeof window !== "undefined" && (window as any).gtag) {
-    //   (window as any).gtag("event", "conversion", {
-    //     send_to: "AW-XXXXXXX/XXXXXXX",
-    //     value: 1.0,
-    //     currency: "EGP",
-    //   });
-    // }
-    // مثال Meta Pixel:
-    // if (typeof window !== "undefined" && (window as any).fbq) {
-    //   (window as any).fbq("track", "Lead");
-    // }
+    const w = window as any;
+    if (w.gtag) {
+      w.gtag("event", "conversion", {
+        send_to: "AW-17039137293/Ie3iCOmajL0cEI208rw_",
+        value: 1.0,
+        currency: "USD",
+      });
+    }
   }, []);
 
   return (

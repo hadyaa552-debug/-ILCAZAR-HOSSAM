@@ -20,23 +20,34 @@ const WA_URL       = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MS
    gtag للفورم: trackLead()
 ════════════════════════════════════════════ */
 function trackCall(label = "call") {
-  // TODO: أضف كود تراكينج المكالمات هنا
-  // مثال: gtag("event", "conversion", { send_to: "AW-XXXXXXX/XXXXXXX" });
-  // مثال: fbq("track", "Contact");
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", "click_call", { event_category: "contact", event_label: label });
+  if (typeof window === "undefined") return;
+  const w = window as any;
+  if (w.gtag) {
+    w.gtag("event", "conversion", {
+      send_to: "AW-17039137293/vaynCLSHj70cEI208rw_",
+      value: 1.0,
+      currency: "USD",
+      event_callback: () => {},
+    });
   }
 }
 function trackWA(label = "whatsapp") {
-  // TODO: أضف كود تراكينج الواتساب هنا
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", "click_whatsapp", { event_category: "contact", event_label: label });
+  if (typeof window === "undefined") return;
+  const w = window as any;
+  if (w.gtag) {
+    w.gtag("event", "conversion", {
+      send_to: "AW-17039137293/2wO6CLGHj70cEI208rw_",
+      value: 1.0,
+      currency: "USD",
+      event_callback: () => {},
+    });
   }
 }
 function trackLead(label = "form") {
-  // TODO: أضف كود تراكينج الفورم هنا (Conversion)
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", "generate_lead", { event_category: "lead", event_label: label });
+  if (typeof window === "undefined") return;
+  const w = window as any;
+  if (w.gtag) {
+    w.gtag("event", "generate_lead", { event_category: "lead", event_label: label });
   }
 }
 
